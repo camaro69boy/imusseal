@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import StructuredData from "../../components/seo/StructuredData";
 
 export const metadata: Metadata = {
   title:
@@ -12,7 +13,31 @@ export const metadata: Metadata = {
 export default function BlogPostPage() {
   return (
     <main className="page">
-      <article className="blogArticle">
+      <StructuredData
+          data={{
+            "@context": "https://schema.org",
+            "@type": "Article",
+            headline: "Deck spacing made easy with Imus Seal® SealSpacer™, the best deck board spacer for DIYers or pros.",
+            datePublished: "2025-03-04",
+            dateModified: "2025-03-04",
+            author: {
+              "@type": "Organization",
+              name: "Imus Seal",
+            },
+            publisher: {
+              "@type": "Organization",
+              name: "Imus Seal",
+              logo: {
+                "@type": "ImageObject",
+                url: "https://www.imusseal.com/images/branding/imusseal_logo.svg",
+              },
+            },
+            image: "https://www.imusseal.com/images/blog/blog_2025_0304_imusseal_sealspacer_deck_board_spacer_featured.png",
+            mainEntityOfPage: "https://www.imusseal.com/blog/deck-spacing-made-easy-with-imus-seal-sealspacer-the-best-deck-board-spacer-for-diyers-or-pros",
+          }}
+        />
+
+        <article className="blogArticle">
         <p className="eyebrow">Blog</p>
 
         <h1>

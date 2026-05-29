@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import StructuredData from "../../components/seo/StructuredData";
 
 export const metadata: Metadata = {
   title: "Imus Seal SealSpacer Deck Board Spacer",
@@ -12,6 +13,26 @@ const amazonLink = "https://amzn.to/3HqmyZC";
 export default function SealSpacerPage() {
   return (
     <main className="page">
+      <StructuredData
+        data={{
+          "@context": "https://schema.org",
+          "@type": "Product",
+          name: "Imus Seal SealSpacer Deck Board Spacer",
+          brand: {
+            "@type": "Brand",
+            name: "Imus Seal",
+          },
+          description:
+            "Patent-pending, multi-thickness tool designed to accurately space gaps between decking during installation.",
+          image: "https://www.imusseal.com/images/products/sisdbs-3pk.png",
+          url: "https://www.imusseal.com/products/imus-seal-sealspacer-deck-board-spacer",
+          offers: {
+            "@type": "Offer",
+            url: amazonLink,
+            availability: "https://schema.org/InStock",
+          },
+        }}
+      />
       <section className="productHero">
         <div>
           <p className="eyebrow">Deck Board Spacing</p>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import StructuredData from "../../components/seo/StructuredData";
 
 export const metadata: Metadata = {
   title: "How to Prevent Deck Rot and Extend the Life of Joists and Beams",
@@ -11,7 +12,31 @@ export const metadata: Metadata = {
 export default function BlogPostPage() {
   return (
     <main className="page">
-      <article className="blogArticle">
+      <StructuredData
+          data={{
+            "@context": "https://schema.org",
+            "@type": "Article",
+            headline: "How to prevent deck rot and extend the life of joists and beams.",
+            datePublished: "2019-10-21",
+            dateModified: "2019-10-21",
+            author: {
+              "@type": "Organization",
+              name: "Imus Seal",
+            },
+            publisher: {
+              "@type": "Organization",
+              name: "Imus Seal",
+              logo: {
+                "@type": "ImageObject",
+                url: "https://www.imusseal.com/images/branding/imusseal_logo.svg",
+              },
+            },
+            image: "https://www.imusseal.com/images/blog/blog_2019_1021_deck_rot_featured.png",
+            mainEntityOfPage: "https://www.imusseal.com/blog/how-to-prevent-deck-rot-and-extend-the-life-of-joists-and-beams",
+          }}
+        />
+
+        <article className="blogArticle">
         <p className="eyebrow">Blog</p>
 
         <h1>How to prevent deck rot and extend the life of joists and beams.</h1>

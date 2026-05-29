@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import StructuredData from "../../components/seo/StructuredData";
 
 export const metadata: Metadata = {
   title:
@@ -12,7 +13,31 @@ export const metadata: Metadata = {
 export default function BlogPostPage() {
   return (
     <main className="page">
-      <article className="blogArticle">
+      <StructuredData
+          data={{
+            "@context": "https://schema.org",
+            "@type": "Article",
+            headline: "Should pressure-treated wood deck structures be flashed to prevent rot?",
+            datePublished: "2019-11-11",
+            dateModified: "2019-11-11",
+            author: {
+              "@type": "Organization",
+              name: "Imus Seal",
+            },
+            publisher: {
+              "@type": "Organization",
+              name: "Imus Seal",
+              logo: {
+                "@type": "ImageObject",
+                url: "https://www.imusseal.com/images/branding/imusseal_logo.svg",
+              },
+            },
+            image: "https://www.imusseal.com/images/blog/blog_2019_1111_pressure_treated_deck_featured.png",
+            mainEntityOfPage: "https://www.imusseal.com/blog/should-pressure-treated-wood-deck-structures-be-flashed-to-prevent-rot",
+          }}
+        />
+
+        <article className="blogArticle">
         <p className="eyebrow">Blog</p>
 
         <h1>

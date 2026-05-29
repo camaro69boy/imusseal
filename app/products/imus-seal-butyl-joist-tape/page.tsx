@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import StructuredData from "../../components/seo/StructuredData";
 
 export const metadata: Metadata = {
   title: "Imus Seal Butyl Joist Tape",
@@ -12,6 +13,27 @@ const amazonLink = "https://amzn.to/47gQCho";
 export default function JoistTapePage() {
   return (
     <main className="page">
+      <StructuredData
+        data={{
+          "@context": "https://schema.org",
+          "@type": "Product",
+          name: "Imus Seal Butyl Joist Tape",
+          brand: {
+            "@type": "Brand",
+            name: "Imus Seal",
+          },
+          description:
+            "Self-adhering flashing tape for joists and beams designed to protect wooden deck structures from water damage and rot.",
+          image:
+            "https://www.imusseal.com/images/products/sisbjtns_deck_joist_tape_sizes.png",
+          url: "https://www.imusseal.com/products/imus-seal-butyl-joist-tape",
+          offers: {
+            "@type": "Offer",
+            url: amazonLink,
+            availability: "https://schema.org/InStock",
+          },
+        }}
+      />
       <section className="productHero">
         <div>
           <p className="eyebrow">Deck Joist Protection</p>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import StructuredData from "../../components/seo/StructuredData";
 
 export const metadata: Metadata = {
   title:
@@ -14,7 +15,31 @@ const amazonLink = "https://amzn.to/47gQCho";
 export default function BlogPostPage() {
   return (
     <main className="page">
-      <article className="blogArticle">
+      <StructuredData
+          data={{
+            "@context": "https://schema.org",
+            "@type": "Article",
+            headline: "New Non-Skid version of Imus Seal® Butyl Joist Tape released. How does it compare to the original?",
+            datePublished: "2022-05-27",
+            dateModified: "2022-05-27",
+            author: {
+              "@type": "Organization",
+              name: "Imus Seal",
+            },
+            publisher: {
+              "@type": "Organization",
+              name: "Imus Seal",
+              logo: {
+                "@type": "ImageObject",
+                url: "https://www.imusseal.com/images/branding/imusseal_logo.svg",
+              },
+            },
+            image: "https://www.imusseal.com/images/blog/blog_2022_0527_non-skid_imusseal_deck_joist_tape_featured.png",
+            mainEntityOfPage: "https://www.imusseal.com/blog/new-non-skid-version-of-imus-seal-butyl-joist-tape-released-how-does-it-compare-to-the-original",
+          }}
+        />
+
+        <article className="blogArticle">
         <p className="eyebrow">Blog</p>
 
         <h1>

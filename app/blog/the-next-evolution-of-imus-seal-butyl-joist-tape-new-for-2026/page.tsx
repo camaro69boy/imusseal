@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import StructuredData from "../../components/seo/StructuredData";
 
 export const metadata: Metadata = {
   title: "The Next Evolution of Imus Seal® Butyl Joist Tape, New for 2026",
@@ -11,7 +12,31 @@ export const metadata: Metadata = {
 export default function BlogPostPage() {
   return (
     <main className="page">
-      <article className="blogArticle">
+      <StructuredData
+          data={{
+            "@context": "https://schema.org",
+            "@type": "Article",
+            headline: "The next evolution of Imus Seal® Butyl Joist Tape, new for 2026",
+            datePublished: "2026-01-04",
+            dateModified: "2026-01-04",
+            author: {
+              "@type": "Organization",
+              name: "Imus Seal",
+            },
+            publisher: {
+              "@type": "Organization",
+              name: "Imus Seal",
+              logo: {
+                "@type": "ImageObject",
+                url: "https://www.imusseal.com/images/branding/imusseal_logo.svg",
+              },
+            },
+            image: "https://www.imusseal.com/images/blog/blog_2026_0104_imusseal_butyl_joist_tape_featured.jpg",
+            mainEntityOfPage: "https://www.imusseal.com/blog/the-next-evolution-of-imus-seal-butyl-joist-tape-new-for-2026",
+          }}
+        />
+
+        <article className="blogArticle">
         <p className="eyebrow">Blog</p>
 
         <h1>The next evolution of Imus Seal® Butyl Joist Tape, new for 2026</h1>
