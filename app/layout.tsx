@@ -13,9 +13,6 @@ export const metadata: Metadata = {
   description:
     "Premium deck protection and deck installation products trusted by building professionals, homeowners, and DIYers.",
   metadataBase: new URL("https://www.imusseal.com"),
-  icons: {
-    icon: "/images/branding/imusseal_favicon.png",
-  },
 };
 
 export default function RootLayout({
